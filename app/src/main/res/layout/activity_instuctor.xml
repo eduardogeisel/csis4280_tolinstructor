@@ -4,17 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#325B56"
     tools:context=".InstuctorActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="#003A3D"
+        android:weightSum="4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/tol_logo" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:text="Tug Of Logic"
+            android:textColor="#FEC8C6"
+            android:textSize="40sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/btCreateGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/custom_button"
         android:text="Create Game"
+        android:textAllCaps="false"
+        android:textColor="#FEC8C6"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
     <TextView
         android:id="@+id/txtMsgReturn"
@@ -32,8 +67,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:hint="Enter Main Claim"
+        android:backgroundTint="#FEC8C6"
         android:inputType="textMultiLine"
         android:lines="5"
+        android:textColor="#FEC8C6"
+        android:textColorHint="#FEC8C6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,22 +79,30 @@
 
     <Button
         android:id="@+id/btSaveMainClaim"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_button"
         android:text="Save Main Claim"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextMainClaim" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextMainClaim"
+        android:textAllCaps="false"
+        android:textColor="#FEC8C6"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/btStartGame"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/custom_button"
         android:text="Start Game"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btSaveMainClaim" />
+        app:layout_constraintTop_toBottomOf="@+id/btSaveMainClaim"
+        android:textAllCaps="false"
+        android:textColor="#FEC8C6"
+        android:textSize="20sp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
