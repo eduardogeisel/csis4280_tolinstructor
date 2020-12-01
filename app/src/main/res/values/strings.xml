@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SocketIODemo</string>
+    <string name="app_name">Tug of Logic</string>
     <string name="title_activity_instuctor">InstuctorActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
