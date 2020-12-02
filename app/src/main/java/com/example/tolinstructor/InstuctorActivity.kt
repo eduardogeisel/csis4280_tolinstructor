@@ -38,7 +38,8 @@ class InstuctorActivity : AppCompatActivity() {
             mSocket = IO.socket(string)
             mSocket.connect()
 
-            Toast.makeText(this,"Connected to " + string, Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Connected to " + string + mSocket.connected(), Toast.LENGTH_LONG).show()
+
 
         } catch (e: Exception) {
             Log.d("error", e.message.toString())
@@ -58,13 +59,17 @@ class InstuctorActivity : AppCompatActivity() {
         btCreateGame.setOnClickListener {
             btCreateGame.visibility = View.GONE
 
-            val sharedPreference =  getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE)
-            val saved_roomId = sharedPreference.getString("room_id","")
+            try {
+                val sharedPreference =  getSharedPreferences(PREFS_FILENAME, Context.MODE_PRIVATE)
+                val saved_roomId = sharedPreference.getString("room_id","")
 
-            val jsonstring : String  = "{'room_id': ${saved_roomId}}"
-            val jobj = JSONObject(jsonstring)
+                val jsonstring : String  = "{'room_id': ${saved_roomId}}"
+                val jobj = JSONObject(jsonstring)
 
-            mSocket.emit("create_game", jobj)
+                mSocket.emit("create_game", jobj)
+            } catch (e: Exception ) {
+                Log.d("FlaskError", e.message.toString())
+            }
 
             editTextMainClaim.visibility = View.VISIBLE
             btSaveMainClaim.visibility = View.VISIBLE
