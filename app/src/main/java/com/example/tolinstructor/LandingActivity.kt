@@ -43,6 +43,8 @@ class LandingActivity : AppCompatActivity() {
 
         btInstructorLogin.setOnClickListener {
             mSocket.emit("instructor_login")
+            val intent = Intent(this, InstuctorActivity::class.java)
+            startActivity(intent)
         }
 
         mSocket.on("instructor_login_return", onInstructorLogin)
